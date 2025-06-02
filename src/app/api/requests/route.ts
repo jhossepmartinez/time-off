@@ -77,7 +77,7 @@ export const updateRequestStatus = async (id: number, status: RequestStatus) => 
             },
             data: {
                 days: {
-                    increment: foundRequest?.days,
+                    increment: foundRequest?.status === RequestStatus.PENDING ? 0 : foundRequest?.days,
                 },
             },
         })
